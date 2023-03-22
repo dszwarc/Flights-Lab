@@ -1,0 +1,65 @@
+<%- include('../partials/header') %>
+    <h1>Flight <%= flight.flightNo %> Departing from <%= flight.airport %></h1>
+    
+    <table>
+        <tr>
+            <th>Flight Number:</th>
+            <td><%= flight.flightNo %></td>
+        </tr>
+        <tr>
+            <th>Airline:</th>
+            <td><%= flight.airline %></td>
+        </tr>
+        <tr>
+            <th>Airport:</th>
+            <td><%= flight.airport %></td>
+        </tr>
+        <tr>
+            <th>Departure Time:</th>
+            <td><%= flight.departs %></td>
+        </tr>
+       
+    </table><br><br>
+
+    <table>
+        <th>Destinations</th>
+        <th>Arrival Time</th>
+            <% destinations.forEach(d => { %>
+                <tr>
+                    <td><%= d.airport %></td>
+                    <td><%= d.arrival %></td>     
+                </tr>
+            <% }) %>
+    </table><br><br>
+
+<form method="POST" id="add-destination" action="/flights/<%= flight._id %>/destinations">
+    <select name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+    </select>
+    <input name="arrival" type="datetime-local">
+    <button type="submit">Add Destination</button>
+</form><br><br><br>
+
+<% if (tickets.length > 0) { %>
+    <table>
+        <tr>
+            <th>Seat</th>
+            <th>Price</th>
+        </tr>
+        <% tickets.forEach(t => { %>
+            <tr>
+                <td><%= t.seat %></td>
+                <td><%= t.price %></td>
+            </tr>
+        <% }) %>
+    </table>
+<% } %>
+
+<a class="button" href="/flights/<%= flight._id %>/tickets/new">Add New Ticket</a>
+
+</body>
+</html>

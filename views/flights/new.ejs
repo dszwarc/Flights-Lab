@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/flights">ALL FLIGHTS</a>
+            <a href="/flights/new">ADD FLIGHTS</a>
+        </nav>
+    </header>
+
+    <h2>Enter New Flight Information</h2>
+    <form action="/flights" method="POST">
+      <label
+        >Airline:
+        <input type="text" name="airline" /> </label
+      ><br />
+      <label
+        >Airport:
+        <input type="text" name="airport" /> </label
+      ><br />
+      <label
+        >Flight Number:
+        <input type="text" name="flightNo" /> </label
+      ><br />
+      <label
+        >Departure Date:
+        <input type="datetime-local" name="departs" value="<%= departsDate %>" /> </label
+      ><br />
+      
+      <input type="submit" value="Add Flight" />
+    </form>
+</body>
+</html>

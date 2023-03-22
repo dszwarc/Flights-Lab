@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+    <div id="flight-info">    
+        <h1>All Flights:</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Airline</th>
+                    <th>Airport</th>
+                    <th>Departure</th>
+                </tr>
+            </thead>
+            <% flights.forEach(f => { %>
+                
+                <% if (f.departs < Date.now()){ %>
+                    <tr class="past">
+                <% } else { %>
+                    <tr>
+                <% } %>
+                        <td><a href="/flights/<%= f._id %>"><%= f.flightNo %></a></td>
+                        <td><%= f.airline %></td>
+                        <td><%= f.airport %></td>
+                        <td><%= f.departs %></td>
+                    
+                    </tr>
+                
+            <% }) %>
+
+        </table>
+        
+    </div>
+</body>
+</html>

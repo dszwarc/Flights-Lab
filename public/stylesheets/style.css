@@ -1,0 +1,61 @@
+body {
+  padding: 15px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40vh;
+  margin: 0px;
+  background-color: rgba(127, 170, 208, 0.817);
+}
+
+a {
+  color: #008cc4;
+  text-decoration: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.past {
+  color: red;
+}
+
+table, td, th {
+  text-align: center;
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 5px;
+  background-color: white;
+}
+
+th {
+  background-color: aquamarine;
+  color: black;
+}
+
+#flight-info{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  background-color: aquamarine;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.button {
+  font: 14px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 6px;
+  border: 1px solid;
+
+}

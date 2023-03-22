@@ -11,6 +11,15 @@ async function newTicket(req,res){
     res.render('tickets/new',{flight})
 }
 
-async function create(req, res){
-    const 
+async function create(req,res){
+    const ticket = req.body;
+    console.log(req.body)
+    try{
+        const newTicket = await TicketModel.create(ticket);
+        newTicket.flight = req.params.id
+        newTicket.save();
+        res.redirect(`/flights/${newTicket.flight}`)
+    } catch(err){
+        console.log(err)
+    }   
 }
